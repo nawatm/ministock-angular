@@ -9,7 +9,7 @@
         "@schematics/angular:component": {
           "style": "scss"
         }
-      },
+      },  
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -28,9 +28,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/custom.js"
+            ] 
           },
           "configurations": {
             "production": {
@@ -123,6 +128,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ministock"
+    }
+  },
+  "defaultProject": "ministock",
+  "cli": {
+    "analytics": false
+  }
 }
