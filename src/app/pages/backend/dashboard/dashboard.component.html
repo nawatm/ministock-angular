@@ -14,6 +14,7 @@
     <thead>
         <tr class="bg-primary text-light">
             <th>ID</th>
+            <th>Image</th>
             <th>Name</th>
             <th>Detail</th>
             <th>Price</th>
@@ -25,6 +26,7 @@
     <tbody>
         <tr *ngFor="let p of dataProduct">
             <td>{{p.id}}</td>
+            <td><img src="{{imageURL}}{{p.product_image}}" width="50"></td>
             <td>{{p.product_name}}</td>
             <td>{{p.product_detail|slice:0:100}}</td>
             <td>{{p.product_price}}</td>

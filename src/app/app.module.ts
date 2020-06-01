@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { ChartModule } from 'angular2-chartjs';
 
 // Service and guard
+import { ConstantService } from './service/common/constant.service'
 import { AuthService } from './service/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 
@@ -24,7 +25,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { DashboardComponent } from './pages/backend/dashboard/dashboard.component';
 import { StockComponent } from './pages/backend/stock/stock.component';
 import { UsersComponent } from './pages/backend/users/users.component';
@@ -57,9 +58,10 @@ import { BackendSidebarComponent } from './shared/backend/backend-sidebar/backen
     AppRoutingModule,
     FormsModule,
     ChartModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [AuthGuard,AuthService],
+  providers: [AuthGuard,AuthService,ConstantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

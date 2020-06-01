@@ -13,7 +13,7 @@ import { StockComponent } from './pages/backend/stock/stock.component';
 import { UsersComponent } from './pages/backend/users/users.component';
 
 // Authen Guard
-import { AuthGuard} from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   // Route สำหรับเรียกหนเ้า frontend layout

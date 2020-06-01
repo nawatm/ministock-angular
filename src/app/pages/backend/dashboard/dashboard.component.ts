@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConstantService } from '../../../service/common/constant.service';
 import { ProductService } from "../../../service/product.service";
 
 @Component({
@@ -20,8 +21,12 @@ export class DashboardComponent implements OnInit {
   // สร้างตัวแปรรับข้อมูลจาก API
   dataProduct:any=[];
 
+  // กำหนดตัวแปร path รูป
+  imageURL:string;
 
-  constructor(private api:ProductService) { }
+  constructor(private api:ProductService,private constant:ConstantService) { 
+    this.imageURL = this.constant.baseAPIURLImage
+  }
 
   ngOnInit(): void {
 
