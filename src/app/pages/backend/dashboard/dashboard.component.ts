@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ConstantService } from '../../../service/common/constant.service';
 import { ProductService } from "../../../service/product.service";
 
+import { AuthService } from "../../../service/auth.service"
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -24,8 +26,15 @@ export class DashboardComponent implements OnInit {
   // กำหนดตัวแปร path รูป
   imageURL:string;
 
-  constructor(private api:ProductService,private constant:ConstantService) { 
+  userProfile = {
+    "fullname" : "",
+    "userstatus" : ""
+  }
+
+  constructor(private api:ProductService,private constant:ConstantService,private auth:AuthService) { 
     this.imageURL = this.constant.baseAPIURLImage
+    this.userProfile = this.auth.getUser()
+    console.log(this.userProfile)
   }
 
   ngOnInit(): void {

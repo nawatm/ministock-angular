@@ -1,6 +1,7 @@
 import { AuthService } from './../../../service/auth.service';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-backend-navbar',
   templateUrl: './backend-navbar.component.html',
@@ -8,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackendNavbarComponent implements OnInit {
 
-  constructor(private auth:AuthService) { }
+  userProfile = {
+    "fullname" : "",
+    "userstatus" : ""
+  }
+
+  constructor(private auth:AuthService) {
+    this.userProfile = this.auth.getUser()
+   }
 
   ngOnInit(): void {
   }

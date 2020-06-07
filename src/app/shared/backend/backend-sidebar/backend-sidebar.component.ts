@@ -8,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackendSidebarComponent implements OnInit {
 
-  constructor(private auth:AuthService) { }
+  userProfile = {
+    "fullname" : "",
+    "userstatus" : ""
+  }
 
+  constructor(private auth:AuthService) { 
+    this.userProfile = this.auth.getUser()
+  }
+  
   ngOnInit(): void {
   }
 

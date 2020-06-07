@@ -1,8 +1,8 @@
 <div class="box_side">
 <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a routerLink="/backend">Dashboard</a></li>
-    <li class="list-group-item"><a routerLink="/backend/stock">Stock</a></li>
-    <li class="list-group-item"><a routerLink="/backend/users">Users</a></li>
+    <li class="list-group-item" *ngIf="userProfile.userstatus=='1'"><a routerLink="/backend">Dashboard</a></li>
+    <li class="list-group-item" *ngIf="userProfile.userstatus=='1'"><a routerLink="/backend/stock">Stock</a></li>
+    <li class="list-group-item" *ngIf="userProfile.userstatus=='1'||userProfile.userstatus=='2'"><a routerLink="/backend/users">Users</a></li>
     <li class="list-group-item"><a (click)="signOut()">Logout</a></li>
 </ul>
 </div>

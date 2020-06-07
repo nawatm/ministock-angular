@@ -23,15 +23,18 @@ const routes: Routes = [
     children:[
       {
         path: "",
-        component: HomeComponent
+        component: HomeComponent,
+        data:{title:"Home"}
       },
       {
         path: "about",
-        component: AboutComponent
+        component: AboutComponent,
+        data:{title:"About"}
       },
       {
         path: "contact",
-        component: ContactComponent
+        component: ContactComponent,
+        data:{title:"Contact"}
       },
     ]
   },
